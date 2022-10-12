@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["title"] = "Question";
+    
+}
+
+<div>
+    <div class="text-end d-flex justify-content-between border-bottom align-items-center">
+        <h5 class="fw-bold">@DateTime.Now.ToLongDateString()</h5>
+        <a class="btn btn-outline-primary display-1" asp-controller="Question" asp-action="Create">New Question</a>
+    </div>
+
+    <div class="pt-4">
+        <p class="pb-4 fw-normal">Question (3)</p>
+
+        <div>
+            <h5 class="fw-normal">What language should i learn to become a good software enginnering ? <a id="reply" style="font-size : 1rem;cursor:pointer;" class="btn btn-info text-white fw-light px-4 mx-4 start-100"> Reply</a> </h5> 
+            
+            <form>
+                <input id="replyInput" class="d-none form-check-input rounded w-75  px-4   py-3" placeholder="Type something  " />
+
+            </form>
+        </div> 
+
+    </div>
+
+</div>
+
+
+<script>
+    const replyInput = document.getElementById('replyInput');
+    const replyBtn = document.getElementById('reply');
+    replyBtn.addEventListener('click',e=>{
+        e.preventDefault();
+
+        replyInput.classList.toggle('d-none');
+    });
+
+</script>
+
